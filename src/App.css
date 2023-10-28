@@ -2,10 +2,21 @@
   max-width: 100%;
   margin: 0 auto;
   text-align: center;
-  --swiper-theme-color: white !important;
 }
 
 .container {
-width: 100%;
-height: 600px;
+  width: 100%;
+  height: 600px;
+}
+
+/* Establecer estilos específicos para dispositivos móviles (ancho igual o inferior a 640px) */
+@media (max-width: 640px) {
+  .container {
+    height: 300px; /* Cambia la altura para dispositivos móviles, por ejemplo */
+  }
+  
+  /* Cambiar el color de fondo del Swiper para dispositivos móviles */
+  .swiper-container {
+    background-color: white !important;
+  }
 }
