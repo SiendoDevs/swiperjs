@@ -9,11 +9,9 @@ import 'swiper/css/scrollbar';
 
 function Slider() {
   const breakpoints = {
-    // Cuando el ancho de la ventana es igual o inferior a 640px, muestra solo 1 imagen por diapositiva.
     640: {
       slidesPerView: 1,
     },
-    // Cuando el ancho de la ventana es superior a 640px, muestra 3 imágenes por diapositiva.
     768: {
       slidesPerView: 3,
     },
@@ -26,19 +24,35 @@ function Slider() {
       navigation
       pagination={{ clickable: true }}
       scrollbar={{ draggable: true }}
-      breakpoints={breakpoints} // Aplicar reglas de responsive definidas anteriormente
+      breakpoints={breakpoints}
     >
       <SwiperSlide>
-        <img src="img/hydroptima-agua.jpg" alt="Img1" style={{ width: "100%" }} />
+        <div className="slide-content">
+          <h1>Titulo 1</h1>
+          <h3>Subtítulo 1</h3>
+          <img src="img/hydroptima-agua.jpg" alt="Img1" style={{ width: "100%" }} />
+        </div>
       </SwiperSlide>
       <SwiperSlide>
-        <img src="img/hydroptima-vaso.jpg" alt="Img2" style={{ width: "100%" }} />
+        <div className="slide-content">
+          <h1>Titulo 2</h1>
+          <h3>Subtítulo 2</h3>
+          <img src="img/hydroptima-vaso.jpg" alt="Img2" style={{ width: "100%" }} />
+        </div>
       </SwiperSlide>
       <SwiperSlide>
-        <img src="img/hydroptima-vaso2.jpg" alt="Img3" style={{ width: "100%" }} />
+        <div className="slide-content">
+          <h1>Titulo 3</h1>
+          <h3>Subtítulo 3</h3>
+          <img src="img/hydroptima-vaso2.jpg" alt="Img3" style={{ width: "100%" }} />
+        </div>
       </SwiperSlide>
       <SwiperSlide>
-        <img src="img/hydroptima-vaso3.jpg" alt="Img4" style={{ width: "100%" }} />
+        <div className="slide-content">
+          <h1>Titulo 4</h1>
+          <h3>Subtítulo 4</h3>
+          <img src="img/hydroptima-vaso3.jpg" alt="Img4" style={{ width: "100%" }} />
+        </div>
       </SwiperSlide>
     </Swiper>
   );

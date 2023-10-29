@@ -2,21 +2,78 @@
   max-width: 100%;
   margin: 0 auto;
   text-align: center;
+  --swiper-theme-color: white !important;
 }
 
 .container {
-  width: 100%;
-  height: 600px;
+width: 100%;
+height: 600px;
 }
 
-/* Establecer estilos específicos para dispositivos móviles (ancho igual o inferior a 640px) */
-@media (max-width: 640px) {
-  .container {
-    height: 300px; /* Cambia la altura para dispositivos móviles, por ejemplo */
-  }
-  
-  /* Cambiar el color de fondo del Swiper para dispositivos móviles */
-  .swiper-container {
-    background-color: white !important;
-  }
+/* Estilos para el contenedor principal */
+.slide-content {
+  position: relative;
+  width: 100%;
+}
+
+/* Estilos para el seudoelemento ::before para oscurecer la imagen */
+.slide-content::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Color de fondo oscuro y semitransparente */
+  z-index: 1; /* Coloca la capa por encima de la imagen */
+  transition: opacity 0.3s; /* Agrega transición para suavizar el efecto de desvanecimiento */
+}
+
+/* Estilos para la imagen */
+.slide-content img {
+  width: 100%;
+  height: auto;
+  display: block;
+  z-index: 2; /* Coloca la imagen por encima de la capa oscura */
+  transition: filter 0.3s; /* Agrega transición para suavizar el efecto de desvanecimiento */
+}
+
+/* Estilos para el h1 y h3 (centrados en la imagen) */
+.slide-content h1 {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: white;
+  z-index: 3; /* Coloca los elementos de texto por encima de la imagen y la capa oscura */
+  padding: 10px;
+  transition: opacity 0.3s; /* Agrega transición para suavizar el efecto de desvanecimiento */
+}
+.slide-content h3 {
+  position: absolute;
+  top: 55%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: white;
+  z-index: 3; /* Coloca los elementos de texto por encima de la imagen y la capa oscura */
+  padding: 10px;
+  transition: opacity 0.3s; /* Agrega transición para suavizar el efecto de desvanecimiento */
+}
+
+/* Estilos para el contenedor principal en estado hover */
+.slide-content:hover::before {
+  opacity: 0; /* Hace que la capa oscura desaparezca cuando se pasa el ratón por encima */
+}
+
+/* Estilos para la imagen en estado hover */
+.slide-content:hover img {
+  filter: brightness(1); /* Restablece el brillo original de la imagen cuando se pasa el ratón por encima */
+}
+
+/* Estilos para el h1 y h3 en estado hover */
+.slide-content:hover h1,
+.slide-content:hover h3 {
+  opacity: 0; /* Hace que el texto desaparezca cuando se pasa el ratón por encima */
 }
